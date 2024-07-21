@@ -32,6 +32,8 @@ def display_menu() -> None:
 def add_book(library: Library) -> None:
     """
     Добавляет книгу в библиотеку.
+
+    :param library: Экземпляр класса `Library` (библиотека).
     """
     title: str = input('Введите название книги: ')
     author: str = input('Введите автора книги: ')
@@ -50,6 +52,8 @@ def add_book(library: Library) -> None:
 def delete_book(library: Library) -> None:
     """
     Удаляет книгу из библиотеки.
+
+    :param library: Экземпляр класса `Library` (библиотека).
     """
     book_id: str = input('Введите ID книги, которую нужно удалить: ')
     library.delete_book(book_id)
@@ -59,6 +63,10 @@ def delete_book(library: Library) -> None:
 def search_books(library: Library, search_field_map: dict[str, str]) -> None:
     """
     Ищет книги по заданным критериям.
+
+    :param library: Экземпляр класса `Library` (библиотека).
+    :param search_field_map: Словарь, где ключи — это строки, представляющие критерии поиска,
+                             а значения — это строки, соответствующие полям в данных библиотеки.
     """
     search_criteria: dict[str, str | int] = {}
     print("Введите критерии поиска. Для завершения введите 'конец'.")
@@ -101,6 +109,8 @@ def search_books(library: Library, search_field_map: dict[str, str]) -> None:
 def display_books(library: Library) -> None:
     """
     Отображает все книги в библиотеке.
+
+    :param library: Экземпляр класса `Library` (библиотека).
     """
     print('\nСодержимое библиотеки:')
     library.display_books()
@@ -110,6 +120,8 @@ def display_books(library: Library) -> None:
 def update_book_status(library: Library) -> None:
     """
     Изменяет статус книги.
+
+    :param library: Экземпляр класса `Library` (библиотека).
     """
     book_id: str = input('Введите ID книги: ')
     new_status: str = input('Введите новый статус (в наличии/выдана): ').strip().lower()
@@ -120,6 +132,8 @@ def update_book_status(library: Library) -> None:
 def save_to_file(library: Library) -> None:
     """
     Сохраняет данные библиотеки в файл.
+
+    :param library: Экземпляр класса `Library` (библиотека).
     """
     file_path = input('Введите путь к файлу для сохранения: ').strip()
     library.save_to_file(file_path)
@@ -129,6 +143,8 @@ def save_to_file(library: Library) -> None:
 def load_from_file(library: Library) -> None:
     """
     Загружает данные библиотеки из файла.
+
+    :param library: Экземпляр класса `Library` (библиотека).
     """
     file_path = input('Введите путь к файлу для загрузки: ').strip()
     library.load_from_file(file_path)
